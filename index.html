@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bill Generator</h1>
+        </header>
+
+        <form id="bill-form">
+            <!-- Client Information -->
+            <section class="client-info">
+                <h2>Client Information</h2>
+                <div class="form-group">
+                    <label for="client-name">Name:</label>
+                    <input type="text" id="client-name" name="client-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-email">Email:</label>
+                    <input type="email" id="client-email" name="client-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-address">Address:</label>
+                    <textarea id="client-address" name="client-address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="client-phone">Phone:</label>
+                    <input type="tel" id="client-phone" name="client-phone" required>
+                </div>
+            </section>
+
+            <!-- Bill Items -->
+            <section class="bill-items">
+                <h2>Bill Items</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Price (₹)</th>
+                            <th>Total (₹)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="description[]" placeholder="Item Description" required></td>
+                            <td><input type="number" name="quantity[]" min="1" value="1" required></td>
+                            <td><input type="number" name="price[]" min="0" step="0.01" value="0.00" required></td>
+                            <td class="item-total">0.00</td>
+                            <td><button type="button" class="remove-item-btn">Remove</button></td>
+                        </tr>
+                        <!-- Additional rows can be added here -->
+                    </tbody>
+                </table>
+                <button type="button" class="add-item-btn">Add Item</button>
+            </section>
+
+            <!-- Total Amount -->
+            <section class="total-amount">
+                <h2>Total Amount</h2>
+                <div class="total">
+                    ₹<span id="grand-total">0.00</span>
+                </div>
+            </section>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit">Generate Bill</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Include PDFKit and blob-stream via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfkit/0.12.3/pdfkit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blob-stream/0.1.3/blob-stream.min.js"></script>
+
+    <!-- Your custom script -->
+    <script src="script.js"></script>
+</body>
+</html>

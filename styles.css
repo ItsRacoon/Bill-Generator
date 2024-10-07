@@ -1,0 +1,144 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+form section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    margin-bottom: 15px;
+    color: #555;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.bill-items table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.bill-items th,
+.bill-items td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.bill-items th {
+    background-color: #f9f9f9;
+}
+
+.bill-items input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-item-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-item-btn:hover {
+    background-color: #218838;
+}
+
+.total-amount .total {
+    font-size: 1.5em;
+    text-align: right;
+    color: #333;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.form-actions button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.form-actions button:hover {
+    background-color: #0069d9;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .bill-items table,
+    .bill-items th,
+    .bill-items td {
+        display: block;
+    }
+
+    .bill-items th,
+    .bill-items td {
+        padding: 10px 5px;
+    }
+
+    .bill-items th {
+        background-color: transparent;
+        border: none;
+    }
+}
